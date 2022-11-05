@@ -1,0 +1,3 @@
+<?php //League%255CBundle%255COAuth2ServerBundle%255CEntity%255CClient
+
+return [PHP_INT_MAX, []];

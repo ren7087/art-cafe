@@ -1,0 +1,72 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) EC-CUBE CO.,LTD. All Rights Reserved.
+
+http://www.ec-cube.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+
+{% block javascript %}
+<script>
+  $(function () {
+	$('#js-slider-3').slick({
+		arrows: true, // 前・次のボタンを表示する
+		speed: 500, // スライドさせるスピード（ミリ秒）
+		slidesToShow: 4, // 表示させるスライド数
+		centerMode: true, // slidesToShowが奇数のとき、現在のスライドを中央に表示する
+		variableWidth: true, // スライド幅の自動計算を無効化
+	});
+  });
+</script>
+{% endblock %}
+
+<div class="creatorPicked-margin">
+<h1 class="fontWeightBold">注目のアーティスト</h1>
+</div>
+<ul class="slider-2" id="js-slider-3">
+  <li>
+    <div class="ec-newItemRole__listItem">
+        <a href="{{ url('product_detail', {'id': '2'}) }}">
+            <img src="https://acrylicrab.com/wp-content/uploads/2017/03/manet_self-portrait.jpg">
+        </a>
+    </div>
+  </li>
+  <li>
+    <div class="ec-newItemRole__listItem">
+        <a href="{{ url('product_detail', {'id': '1'}) }}">
+            <img src="https://acrylicrab.com/wp-content/uploads/2017/03/6MonetSPB-e1489564992931.jpg">
+        </a>
+    </div>
+  </li>
+  <li>
+   <div class="ec-newItemRole__listItem">
+        <a href="{{ url('product_detail', {'id': '1'}) }}">
+            <img src="https://spice.eplus.jp/images/CJNrOT3GWGfiteiLgImNzLhPGIRXCrZM3N12PqTyKrEekzWXTbDvO8iUMkmrZSyf">
+        </a>
+    </div>
+  </li>
+  <li>
+    <div class="ec-newItemRole__listItem">
+        <a href="{{ url('product_detail', {'id': '2'}) }}">
+            <img src="https://livedoor.blogimg.jp/insidercharmant/imgs/0/4/04dfd3b4.jpg">
+        </a>
+    </div>
+  </li>
+  <li>
+    <div class="ec-newItemRole__listItem">
+        <a href="{{ url('product_detail', {'id': '1'}) }}">
+            <img src="https://acrylicrab.com/wp-content/uploads/2017/03/Turner_selfportrait-788x1024.jpg">
+        </a>
+    </div>
+  </li>
+  <li>
+   <div class="ec-newItemRole__listItem">
+        <a href="{{ url('product_detail', {'id': '1'}) }}">
+            <img src="http://liveatloft.cocolog-nifty.com/photos/uncategorized/2015/01/22/photo_7.jpg">
+        </a>
+    </div>
+  </li>
+</ul>

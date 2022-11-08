@@ -1,11 +1,64 @@
 /* カスタマイズ用CSS */
+
+/* 全体 */
+.fontWeightBold {
+	font-weight: bold;
+}
+
 /* headerのcss */
 .ec-headerNaviRole {
-	background-color: #0dcaf0;
+	background-color: #202020;
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: 100%;
 	height: 130px;
+}
+
+.ec-headerNaviRole .ec-headerNaviRole__search {
+	display: inline-block;
+	margin-top: 10px;
+}
+.ec-headerNaviRole .ec-headerNaviRole__search a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+	font-size: x-large;
+}
+.ec-headerNaviRole .ec-headerNaviRole__search a:hover {
+	text-decoration: none;
+	color: #d5a770;
+}
+
+.ec-headerNav .ec-headerNav__item {
+	margin-left: 0;
+	display: inline-block;
+	font-size: 28px;
+}
+.ec-headerNav .ec-headerNav__itemIcon {
+	display: inline-block;
+	margin-right: 20px;
+	margin-left: 10px;
+	font-size: 18px;
+	color: white;
+}
+
+.ec-cartNavi .ec-cartNavi__badge {
+	display: inline-block;
+	border-radius: 99999px;
+	box-sizing: border-box;
+	padding: 5px;
+	height: 17px;
+	font-size: 10px;
+	line-height: 0.7;
+	vertical-align: top;
+	color: #fff;
+	text-align: left;
+	white-space: nowrap;
+	background-color: #d5a770;
+	position: absolute;
+	left: 60%;
+	top: -10px;
 }
 
 .ec-sliderRole {
@@ -13,6 +66,12 @@
 }
 
 /* artPickedのcss */
+.artPicked-margin {
+	margin-left: 10%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
 .slider-2 .slick-slide {
 	width: 300px;
 	height: 100%;
@@ -22,6 +81,7 @@
 }
 .slider-2 .slick-slide img {
 	display: block;
+	border-radius: 5%;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -85,4 +145,73 @@
 }
 .dots-2 .slick-dots .slick-active button {
 	background: #0a467d;
+}
+
+/* artCategory */
+.artCategory {
+	padding-top: 20px;
+	padding-bottom: 30px;
+	background-color: #f4f1ee;
+	margin-bottom: 30px;
+}
+
+.artCategory-title {
+	margin-top: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.artCategory-flex {
+	background-color: #f4f1ee;
+	padding: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.img-wrapper {
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	font-size: 30px;
+	width: 250px;
+	text-align: center;
+}
+
+.img-wrapper img {
+	width: 100%;
+}
+
+.artCategory-button a {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	padding: 1em 2em;
+	width: 300px;
+	color: #f4f1ee;
+	font-size: 18px;
+	font-weight: 700;
+	background-color: black;
+	border-radius: 50vh;
+}
+
+.artCategory-button a::after {
+	content: "";
+	width: 5px;
+	height: 5px;
+	border-top: 3px solid #f4f1ee;
+	border-right: 3px solid #f4f1ee;
+	transform: rotate(45deg);
+}
+
+.artCategory-button a:hover {
+	text-decoration: none;
+	background-color: #bbbbbb;
+}
+
+/* creatorPicked */
+.creatorPicked-margin {
+	margin-left: 10%;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }

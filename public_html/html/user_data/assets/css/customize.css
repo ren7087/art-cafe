@@ -1,10 +1,19 @@
 /* カスタマイズ用CSS */
 
 /* 全体 */
+.fontawesome-size {
+  color: #d5a770;
+}
+
+.fontweight-bold {
+  font-weight: bold;
+}
+
 .hr {
-  background-color: #d5a770;
-  width: 20%;
-  height: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 70%;
+  border: solid #d5a770 1px;
 }
 
 .flex {
@@ -18,9 +27,10 @@
 }
 
 .hr-bold {
-  background-color: #d5a770;
-  width: 60%;
-  size: 4px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  width: 30%;
+  border: solid #d5a770 3px;
 }
 
 .fontWeightBold {
@@ -119,7 +129,7 @@
   display: flex;
   justify-content: space-between;
   list-style-type: none;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .gnav li {
@@ -136,7 +146,8 @@
 .gnav a {
   color: #fff;
   border-left: solid 1px #fefefe;
-  padding: 0 65px;
+  padding: 0 20px;
+  font-weight: bold;
 }
 
 .gnav > li:last-child a {
@@ -182,7 +193,7 @@
 }
 
 .megamenu-inner-text img {
-  margin: 0 5px 0 0;
+  padding: 0 5px 0 0;
 }
 
 /* artPickedのcss */
@@ -356,6 +367,20 @@
 }
 
 /* detail 商品詳細ページのcss */
+.product-detail-title-description {
+  margin-top: 20px;
+}
+
+.product-detail-artist-desc {
+  margin-top: 20px;
+}
+
+.fontawesome-margin {
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
 .ec-headingTitle {
   margin: 0 0 8px;
   font-size: 32px;
@@ -421,10 +446,12 @@
 
 .product-detail-artist {
   display: flex;
+  margin-top: 30px;
 }
 
 .product-detail-artist-description {
   width: 50%;
+  margin-top: 30px;
 }
 
 .product-detail-artist-photo {
@@ -523,4 +550,40 @@ a.btn--orange:hover {
 .thumb-2::-webkit-slider-thumb {
   background: black;
   box-shadow: -100vw 0 0 100vw var(--bar);
+}
+
+/* cart ショッピングカートのcss */
+.ec-progress .is-complete .ec-progress__number {
+  background: #d5a770;
+}
+.ec-progress .is-complete .ec-progress__label {
+  color: #d5a770;
+}
+
+/* スマホ画面の時のハンバーガーメニュー */
+.ec-drawerRole .ec-headerCategoryArea .ec-headerCategoryArea__heading {
+  display: flex;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding: 1em 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  background: #f8f8f8;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+/* スマホサイズの時 */
+@media screen and (max-width: 768px) {
+  .ec-headerNaviRole__center {
+    display: none;
+  }
+  .ec-headerNaviRole .ec-headerNaviRole__search {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 40px;
+  }
 }

@@ -306,28 +306,28 @@ file that was distributed with this source code.
                         {% endfor %}
                     </div>
                 </div>
-				<div class="product-detail-title">
-					<h2>作品紹介<h2>
+				<div class="flex">
+					<i class="fa-solid fa-palette fa-2x fontawesome-size"></i><h2 class="fontweight-bold">作品紹介<h2>
 				</div>
 				<div class="product-detail-title-description">
-					<p>これはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテストこれはテスト</p>
+					<p>ペンシルベニア州フィラデルフィアのワシントンアベニュー移民埠頭の遺跡に触発されました。デラウェア川と埠頭の残骸の孤独で静かな景色は、新しい豊かな生活を期待してここに上陸した数百万人の移民を思い起こさせます。作品は平らに販売され、フレーミングの準備ができてマウントされています</p>
 				</div>
 
-				<hr class="hr-bold">
+				<div class="hr-bold"></div>
 
 				<div class="product-detail-artist">
 					<div class="product-detail-artist-description">
-						<div class="product-detail-artist-name">
-							<h2>タスタス</h2>
+						<div class="flex">
+							<i class="fa-brands fa-snapchat fa-2x fontawesome-size"></i><h2 class="fontweight-bold">タスタス</h2>
 						</div>
 						<div class="product-detail-artist-desc">
-							<p>これはテストですこれはテストですこれはテストですこれはテストですこれはテストですこれはテストです</p>
+							<p class="fontweight-bold">« 私は色を使って作業することの純粋な喜びのために、静けさを達成するために最低限まで手を伸ばします。 »</p>
 						</div>
 
-						<hr class="hr">
+						<div class="hr"></div>
 
 						<div class="product-detail-artist-icon">
-							<i class="fa-brands fa-twitter fa-2x"></i>
+							<i class="fa-brands fa-twitter fa-2x fontawesome-margin"></i>
 							<i class="fa-regular fa-envelope fa-2x"></i>
 						</div>
 
@@ -336,7 +336,7 @@ file that was distributed with this source code.
 						</div>
 					</div>
 					<div class="product-detail-artist-photo">
-						<img src="https://acrylicrab.com/wp-content/uploads/2017/03/Turner_selfportrait-788x1024.jpg">
+						<img src="https://cdn.singulart.com/artists/pictures/cropped/artwork/base/artist_artwork_4917_0c8ff184d1baa7f920595cdfb2050b42.jpeg">
 					</div>
 				</div>
             </div>
@@ -434,7 +434,7 @@ file that was distributed with this source code.
                     {% endif %}
                     <form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
                         {% if Product.stock_find %}
-                            <div class="ec-productRole__actions">
+                            {# <div class="ec-productRole__actions">
                                 {% if form.classcategory_id1 is defined %}
                                     <div class="ec-select">
                                         {{ form_row(form.classcategory_id1) }}
@@ -451,7 +451,7 @@ file that was distributed with this source code.
                                     {{ form_widget(form.quantity) }}
                                     {{ form_errors(form.quantity) }}
                                 </div>
-                            </div>
+                            </div> #}
                             <div class="ec-productRole__btn">
                                 <button type="submit" class="ec-blockBtn--action add-cart">
                                     {{ 'カートに入れる'|trans }}
@@ -465,7 +465,7 @@ file that was distributed with this source code.
                             </div>
                         {% endif %}
 
-                        {{ form_rest(form) }}
+                        {# {{ form_rest(form) }} #}
                     </form>
                     <div class="ec-modal">
                         <div class="ec-modal-overlay">

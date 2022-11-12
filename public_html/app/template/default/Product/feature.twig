@@ -12,6 +12,7 @@ file that was distributed with this source code.
 
 {% set body_class = 'product_page' %}
 
+
 {% block javascript %}
     <script>
         eccube.productsClassCategories = {
@@ -94,65 +95,156 @@ file that was distributed with this source code.
         $('.ec-modal-overlay, .ec-modal, .ec-modal-close, .ec-inlineBtn--cancel').on('click', function() {
             $('.ec-modal').hide()
         });
-
-		//価格のslider
-		const range1 = document.querySelector('#range-1');
-		const range2 = document.querySelector('#range-2');
-
-		const startValue1 = document.querySelector('#start-value1');
-		const endValue2 = document.querySelector('#end-value2');
-
-		range1.addEventListener('input', (evt) => {
-			startValue1.textContent = evt.target.value;
-		})
-
-		range2.addEventListener('input', (evt) => {
-			endValue2.textContent = evt.target.value;
-		})
-
-		startValue1.textContent = range1.value;
-		endValue2.textContent = range2.value;
-
-		//高さのslider
-		const range3 = document.querySelector('#range-3');
-		const range4 = document.querySelector('#range-4');
-
-		const startValue3 = document.querySelector('#start-value3');
-		const endValue4 = document.querySelector('#end-value4');
-
-		range3.addEventListener('input', (evt) => {
-			startValue3.textContent = evt.target.value;
-		})
-
-		range4.addEventListener('input', (evt) => {
-			endValue4.textContent = evt.target.value;
-		})
-
-		startValue3.textContent = range3.value;
-		endValue4.textContent = range4.value;
-
-		//幅のslider
-		const range5 = document.querySelector('#range-5');
-		const range6 = document.querySelector('#range-6');
-
-		const startValue5 = document.querySelector('#start-value5');
-		const endValue6 = document.querySelector('#end-value6');
-
-		range5.addEventListener('input', (evt) => {
-			startValue5.textContent = evt.target.value;
-		})
-
-		range6.addEventListener('input', (evt) => {
-			endValue6.textContent = evt.target.value;
-		})
-
-		startValue5.textContent = range5.value;
-		endValue6.textContent = range6.value;
     </script>
 {% endblock %}
 
+{% block stylesheet %}
+	<style>
+	.header-photo {
+		margin-top: 40px;
+		margin-left: 11%;
+		margin-right: 2%;
+		margin-bottom: 40px;
+		position: relative;
+	}
+
+	.header-photo h2 {
+		position: absolute;
+		top: 50%;
+		left: 45%;
+		-ms-transform: translate(-50%,-50%);
+		-webkit-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+		margin:0;
+		padding:0;
+		/*文字の装飾*/
+		font-weight: bold;
+		color: white;
+	}
+
+	.header-photo img {
+		width: 90%;
+	}
+	</style>
+{% endblock %}
+
+
 {% block main %}
-    {% if search_form.category_id.vars.errors|length > 0 %}
+    <div class="ec-headerNaviRole">
+		<div class="ec-headerNaviRole__left">
+			<div class="ec-headerNaviRole__search">
+				<a href="/">タスタスアートギャラリーカフェ</a>
+			</div>
+			<div class="ec-headerRole__navSP">
+				{{ include('Block/nav_sp.twig') }}
+			</div>
+		</div>
+		<div class="ec-headerNaviRole__center">
+			<div class="ec-headerNaviRole__nav">
+				<ul class="gnav main-wrapper">
+					<li>
+					<a href="">作品</a>
+					<div class="megamenu">
+					<ul class="megamenu-inner main-wrapper">
+						<li>
+							<a href="/products/list">
+							<div class="megamenu-inner-text"><img src="https://techmemo.biz/demo/megamenu/images/megamenu-inner1-1.png">一覧</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+							<div class="megamenu-inner-text"><img src="https://techmemo.biz/demo/megamenu/images/megamenu-inner1-1.png">~50cm</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+							<div class="megamenu-inner-text"><img src="https://techmemo.biz/demo/megamenu/images/megamenu-inner1-1.png">50~150cm</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+							<div class="megamenu-inner-text"><img src="https://techmemo.biz/demo/megamenu/images/megamenu-inner1-1.png">150cm~</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+							<div class="megamenu-inner-text"><img src="https://techmemo.biz/demo/megamenu/images/megamenu-inner1-1.png">~5000円</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+							<div class="megamenu-inner-text"><img src="https://techmemo.biz/demo/megamenu/images/megamenu-inner1-1.png">5000円~10000円</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+							<div class="megamenu-inner-text"><img src="https://techmemo.biz/demo/megamenu/images/megamenu-inner1-1.png">10000円</div>
+							</a>
+						</li>
+					</ul><!-- .megamenu-inner -->
+					</div><!-- .megamenu -->
+					</li>
+					<li>
+					<a href="">コレクション</a>
+					<div class="megamenu">
+					<ul class="megamenu-inner main-wrapper">
+						<li>
+							<a href="/products/feature/1">
+							<div class="megamenu-inner-text"><img src="https://casie.jp/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMThUQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a7ee42a32dbffc15c8bbddd3c7eab29724aba408/2022%E5%B9%B4%E7%A7%8B%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%20(1).jpg" alt="">ストリートアート</div>
+							</a>
+						</li>
+						<li>
+							<a href="/products/feature/2">
+							<div class="megamenu-inner-text"><img src="https://casie.jp/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMThUQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a7ee42a32dbffc15c8bbddd3c7eab29724aba408/2022%E5%B9%B4%E7%A7%8B%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%20(1).jpg" alt="">風景</div>
+							</a>
+						</li>
+						<li>
+							<a href="/products/feature/3">
+							<div class="megamenu-inner-text"><img src="https://casie.jp/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMThUQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a7ee42a32dbffc15c8bbddd3c7eab29724aba408/2022%E5%B9%B4%E7%A7%8B%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%20(1).jpg" alt="">ポートレート</div>
+							</a>
+						</li>
+						<li>
+							<a href="/products/feature/4">
+							<div class="megamenu-inner-text"><img src="https://casie.jp/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMThUQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a7ee42a32dbffc15c8bbddd3c7eab29724aba408/2022%E5%B9%B4%E7%A7%8B%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%20(1).jpg" alt="">日常</div>
+							</a>
+						</li>
+						<li>
+							<a href="/products/feature/5">
+							<div class="megamenu-inner-text"><img src="https://casie.jp/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMThUQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a7ee42a32dbffc15c8bbddd3c7eab29724aba408/2022%E5%B9%B4%E7%A7%8B%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%20(1).jpg" alt="">動物</div>
+							</a>
+						</li>
+						<li>
+							<a href="/products/feature/6">
+							<div class="megamenu-inner-text"><img src="https://casie.jp/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMThUQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a7ee42a32dbffc15c8bbddd3c7eab29724aba408/2022%E5%B9%B4%E7%A7%8B%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%20(1).jpg" alt="">ファンタジー</div>
+							</a>
+						</li>
+						<li>
+							<a href="/products/feature/7">
+							<div class="megamenu-inner-text"><img src="https://casie.jp/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMThUQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a7ee42a32dbffc15c8bbddd3c7eab29724aba408/2022%E5%B9%B4%E7%A7%8B%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88%20(1).jpg" alt="">ポップアート</div>
+							</a>
+						</li>
+					</ul><!-- .megamenu-inner -->
+					</div><!-- .megamenu --></li>
+					<li><a href="/artists">アーティスト</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="ec-headerNaviRole__right">
+			<div class="ec-headerNaviRole__nav">
+				{{ include('Block/login.twig') }}
+			</div>
+			<div class="ec-headerRole__cart">
+				{{ include('Block/cart.twig') }}
+			</div>
+		</div>
+	</div>
+
+	<div class="header-photo">
+		<img src="https://www.teamlab.art/images/pc-l/28989">
+		<h2>SUNSET</h2>
+	</div>
+
+	{% if search_form.category_id.vars.errors|length > 0 %}
         <div class="ec-searchnavRole">
             <p class="errormsg text-danger">{{ 'ご指定のカテゴリは存在しません'|trans }}</p>
         </div>
@@ -183,65 +275,6 @@ file that was distributed with this source code.
                     {% endif %}
                 </ol>
             </div>
-
-			<div class="product-list-flex">
-				<div class="product-list-size">
-					<div class="slidebar-multithumb">
-						<div class="flex">
-							<div class="slidebar-multithumb-title"><label for="range-label">価格</label></div>
-							<div><span id="start-value1"></span>~</div>
-							<div><span id="end-value2"></span></div>
-						</div>
-						<input class="thumb-1" type="range" name="range-1" id="range-1" value="0" min="0" max="2000000" step="1">
-						<input class="thumb-2" type="range" name="range-2" id="range-2" value="2000000" min="0" max="2000000" step="1">
-					</div>
-				</div>
-
-				<div class="line"></div>
-
-				<div class="product-list-size">
-					<div class="slidebar-multithumb">
-						<div class="flex">
-							<div class="slidebar-multithumb-title"><label for="range-label">高さ</label></div>
-							<div><span id="start-value3"></span>~</div>
-							<div><span id="end-value4"></span></div>
-						</div>
-						<input class="thumb-1" type="range" name="range-3" id="range-3" value="0" min="0" max="500" step="1">
-						<input class="thumb-2" type="range" name="range-4" id="range-4" value="500" min="0" max="500" step="1">
-					</div>
-				</div>
-
-				<div class="line"></div>
-
-				<div class="product-list-size">
-					<div class="slidebar-multithumb">
-						<div class="flex">
-							<div class="slidebar-multithumb-title"><label for="range-label">幅</label></div>
-							<div><span id="start-value5"></span>~</div>
-							<div><span id="end-value6"></span></div>
-						</div>
-						<input class="thumb-1" type="range" name="range-5" id="range-5" value="0" min="0" max="500" step="1">
-						<input class="thumb-2" type="range" name="range-6" id="range-6" value="500" min="0" max="500" step="1">
-					</div>
-				</div>
-
-				<div class="line"></div>
-
-				<div class="product-list-size">
-					<label class="product-list-size-checkbox">
-						<input class="ECM_CheckboxInput-Input" type="checkbox">
-						<span class="ECM_CheckboxInput-LabelText">購入可能な作品のみ表示</span>
-					</label>
-				</div>
-
-				<div class="line"></div>
-
-				<div class="product-list-size">
-					<div class="product-list-size-button">
-					    <a href="" class="btn btn--orange fontweight-bold">検索条件をリセット</a>
-					</div>
-				</div>
-			</div>
 
             <div class="ec-searchnavRole__infos">
                 <div class="ec-searchnavRole__counter">
@@ -349,4 +382,30 @@ file that was distributed with this source code.
             </div>
         {% endif %}
     {% endif %}
+
+	<div class="ec-footerRole">
+		<div class="ec-footerRole__inner">
+			<ul class="ec-footerNavi">
+				<li class="ec-footerNavi__link">
+					<a href="{{ url('help_about') }}">{{ '当サイトについて'|trans }}</a>
+				</li>
+				<li class="ec-footerNavi__link">
+					<a href="{{ url('help_privacy') }}">{{ 'プライバシーポリシー'|trans }}</a>
+				</li>
+				<li class="ec-footerNavi__link">
+					<a href="{{ url('help_tradelaw') }}">{{ '特定商取引法に基づく表記'|trans }}</a>
+				</li>
+				<li class="ec-footerNavi__link">
+					<a href="{{ url('contact') }}">{{ 'お問い合わせ'|trans }}</a>
+				</li>
+			</ul>
+			<div class="ec-footerTitle">
+				<div class="ec-footerTitle__logo">
+					<a href="{{ url('homepage') }}">{{ BaseInfo.shop_name }}</a>
+				</div>
+				<div class="ec-footerTitle__copyright">copyright (c) {{ BaseInfo.shop_name }} all rights reserved.</div>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}

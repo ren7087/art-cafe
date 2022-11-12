@@ -10,8 +10,6 @@ file that was distributed with this source code.
 #}
 {% extends 'default_frame.twig' %}
 
-{% set body_class = 'product_page' %}
-
 {% block javascript %}
     <script>
         eccube.productsClassCategories = {
@@ -94,65 +92,47 @@ file that was distributed with this source code.
         $('.ec-modal-overlay, .ec-modal, .ec-modal-close, .ec-inlineBtn--cancel').on('click', function() {
             $('.ec-modal').hide()
         });
-
-		//価格のslider
-		const range1 = document.querySelector('#range-1');
-		const range2 = document.querySelector('#range-2');
-
-		const startValue1 = document.querySelector('#start-value1');
-		const endValue2 = document.querySelector('#end-value2');
-
-		range1.addEventListener('input', (evt) => {
-			startValue1.textContent = evt.target.value;
-		})
-
-		range2.addEventListener('input', (evt) => {
-			endValue2.textContent = evt.target.value;
-		})
-
-		startValue1.textContent = range1.value;
-		endValue2.textContent = range2.value;
-
-		//高さのslider
-		const range3 = document.querySelector('#range-3');
-		const range4 = document.querySelector('#range-4');
-
-		const startValue3 = document.querySelector('#start-value3');
-		const endValue4 = document.querySelector('#end-value4');
-
-		range3.addEventListener('input', (evt) => {
-			startValue3.textContent = evt.target.value;
-		})
-
-		range4.addEventListener('input', (evt) => {
-			endValue4.textContent = evt.target.value;
-		})
-
-		startValue3.textContent = range3.value;
-		endValue4.textContent = range4.value;
-
-		//幅のslider
-		const range5 = document.querySelector('#range-5');
-		const range6 = document.querySelector('#range-6');
-
-		const startValue5 = document.querySelector('#start-value5');
-		const endValue6 = document.querySelector('#end-value6');
-
-		range5.addEventListener('input', (evt) => {
-			startValue5.textContent = evt.target.value;
-		})
-
-		range6.addEventListener('input', (evt) => {
-			endValue6.textContent = evt.target.value;
-		})
-
-		startValue5.textContent = range5.value;
-		endValue6.textContent = range6.value;
     </script>
 {% endblock %}
 
+{% block stylesheet %}
+	<style>
+	.header-photo {
+		margin-top: 40px;
+		margin-left: 11%;
+		margin-right: 2%;
+		margin-bottom: 40px;
+		position: relative;
+	}
+
+	.header-photo h2 {
+		position: absolute;
+		top: 50%;
+		left: 45%;
+		-ms-transform: translate(-50%,-50%);
+		-webkit-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+		margin:0;
+		padding:0;
+		/*文字の装飾*/
+		font-weight: bold;
+		color: white;
+	}
+
+	.header-photo img {
+		width: 90%;
+	}
+	</style>
+{% endblock %}
+
+
 {% block main %}
-    {% if search_form.category_id.vars.errors|length > 0 %}
+	<div class="header-photo">
+		<img src="https://sh-cdn.singulart.com/eyJidWNrZXQiOiJzaW5ndWxhcnQtd2Vic2l0ZS1wcm9kIiwia2V5IjoiYXJ0aXN0c1wvdjJcL3BpY3R1cmVzXC9jcm9wcGVkXC9zdHVkaW9cL2Jhc2VcLzEzMzZfc3R1ZGlvXzAwNzY1OGQ0NDRlMWE1MjhiOWRlODIxYmQ0MTRiNzEzLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6NDYwLCJmaXQiOiJjb3ZlciJ9LCJ0b0Zvcm1hdCI6IndlYnAiLCJ3ZWJwIjp7InF1YWxpdHkiOjgwfX19?signature=8dd9a04e219b34454723ae1876cda86063e22f77b898d6d073c648889889b95e">
+		<h2>Artists</h2>
+	</div>
+
+	{% if search_form.category_id.vars.errors|length > 0 %}
         <div class="ec-searchnavRole">
             <p class="errormsg text-danger">{{ 'ご指定のカテゴリは存在しません'|trans }}</p>
         </div>
@@ -183,65 +163,6 @@ file that was distributed with this source code.
                     {% endif %}
                 </ol>
             </div>
-
-			<div class="product-list-flex">
-				<div class="product-list-size">
-					<div class="slidebar-multithumb">
-						<div class="flex">
-							<div class="slidebar-multithumb-title"><label for="range-label">価格</label></div>
-							<div><span id="start-value1"></span>~</div>
-							<div><span id="end-value2"></span></div>
-						</div>
-						<input class="thumb-1" type="range" name="range-1" id="range-1" value="0" min="0" max="2000000" step="1">
-						<input class="thumb-2" type="range" name="range-2" id="range-2" value="2000000" min="0" max="2000000" step="1">
-					</div>
-				</div>
-
-				<div class="line"></div>
-
-				<div class="product-list-size">
-					<div class="slidebar-multithumb">
-						<div class="flex">
-							<div class="slidebar-multithumb-title"><label for="range-label">高さ</label></div>
-							<div><span id="start-value3"></span>~</div>
-							<div><span id="end-value4"></span></div>
-						</div>
-						<input class="thumb-1" type="range" name="range-3" id="range-3" value="0" min="0" max="500" step="1">
-						<input class="thumb-2" type="range" name="range-4" id="range-4" value="500" min="0" max="500" step="1">
-					</div>
-				</div>
-
-				<div class="line"></div>
-
-				<div class="product-list-size">
-					<div class="slidebar-multithumb">
-						<div class="flex">
-							<div class="slidebar-multithumb-title"><label for="range-label">幅</label></div>
-							<div><span id="start-value5"></span>~</div>
-							<div><span id="end-value6"></span></div>
-						</div>
-						<input class="thumb-1" type="range" name="range-5" id="range-5" value="0" min="0" max="500" step="1">
-						<input class="thumb-2" type="range" name="range-6" id="range-6" value="500" min="0" max="500" step="1">
-					</div>
-				</div>
-
-				<div class="line"></div>
-
-				<div class="product-list-size">
-					<label class="product-list-size-checkbox">
-						<input class="ECM_CheckboxInput-Input" type="checkbox">
-						<span class="ECM_CheckboxInput-LabelText">購入可能な作品のみ表示</span>
-					</label>
-				</div>
-
-				<div class="line"></div>
-
-				<div class="product-list-size">
-					<div class="product-list-size-button">
-					    <a href="" class="btn btn--orange fontweight-bold">検索条件をリセット</a>
-					</div>
-				</div>
-			</div>
 
             <div class="ec-searchnavRole__infos">
                 <div class="ec-searchnavRole__counter">

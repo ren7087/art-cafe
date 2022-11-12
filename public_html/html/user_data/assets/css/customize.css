@@ -5,6 +5,65 @@
   color: #d5a770;
 }
 
+/* tooltip */
+.c-tooltip {
+  display: inline-block;
+  position: relative;
+}
+
+.c-tooltip::before,
+.c-tooltip::after {
+  -webkit-transition: all 0.2s;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.2s;
+  visibility: hidden;
+  z-index: 11;
+}
+
+.c-tooltip::before {
+  -webkit-transform: translateY(-50%);
+  border-color: transparent #5f6368 transparent transparent;
+  border-style: solid;
+  border-width: 3px 7px 3px 0;
+  content: "";
+  height: 0;
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+}
+
+.c-tooltip::after {
+  -webkit-transform: translateY(-50%);
+  background: #5f6368;
+  border-radius: 3px;
+  color: #fff;
+  content: attr(data-tooltip);
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  left: calc(100% + 13px);
+  padding: 5px 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+.c-tooltip:hover {
+  cursor: pointer;
+}
+
+.c-tooltip:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.c-tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 .fontweight-bold {
   font-weight: bold;
 }
@@ -37,10 +96,10 @@
   font-weight: bold;
 }
 
-.ec-layoutRole .ec-layoutRole__main {
+/* .ec-layoutRole .ec-layoutRole__main {
   width: 100%;
   margin-top: 50px;
-}
+} */
 
 .ec-layoutRole .ec-layoutRole__contents {
   margin-right: auto;
@@ -92,6 +151,14 @@
   margin-left: 10px;
   font-size: 18px;
   color: white;
+}
+
+.ec-headerNav .ec-headerNav__itemIcon:hover {
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 10px;
+  font-size: 18px;
+  color: #d5a770;
 }
 
 .ec-cartNavi .ec-cartNavi__badge {
@@ -472,11 +539,13 @@
 }
 
 .product-list-size-checkbox {
-  margin-top: 35px;
+  margin-left: 2px;
+  margin-top: 29px;
 }
 
 .product-list-size-button {
-  margin-top: 30px;
+  margin-left: 10px;
+  margin-top: 25px;
 }
 
 .btn--orange,
@@ -518,8 +587,14 @@ a.btn--orange:hover {
   pointer-events: none;
   -webkit-appearance: none;
   background: none;
-  border: 1px solid;
+  border-radius: 10px;
   overflow: hidden;
+  height: 14px; /* バーの高さ */
+  width: 100%;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  /* border: solid 3px #d5a770; */
 }
 
 /* つまみ部分のスタイル */
@@ -528,6 +603,23 @@ a.btn--orange:hover {
   -webkit-appearance: none;
   width: 0.8rem;
   height: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  /* background: #d5a770; */
+}
+
+/* つまみ部分のスタイル */
+.slidebar-multithumb ::-moz-range-thumb {
+  background: #d5a770; /* 背景色 */
+  width: 0.8rem;
+  height: 1.5rem;
+  border-radius: 50%; /* 円形に */
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); /* 影 */
+  border: none; /* デフォルトの線を消す */
+}
+
+.slidebar-multithumb ::-moz-focus-outer {
+  border: 0;
 }
 
 /* それぞれのつまみのスタイル */
@@ -559,6 +651,24 @@ a.btn--orange:hover {
 .ec-progress .is-complete .ec-progress__label {
   color: #d5a770;
 }
+
+会員登録 Entry/indexのcss
+/* .ec-pageHeader .a {
+  margin: 0 0 8px;
+  border-bottom: 1px dotted #ccc;
+  border-top: 1px solid #ccc;
+  padding: 8px 0 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.ec-pageHeader .h4 {
+  margin: 0 0 8px;
+  border-bottom: 1px dotted #ccc;
+  border-top: 1px solid #ccc;
+  padding: 8px 0 12px;
+  font-size: 16px;
+  font-weight: bold;
+} */
 
 /* スマホ画面の時のハンバーガーメニュー */
 .ec-drawerRole .ec-headerCategoryArea .ec-headerCategoryArea__heading {

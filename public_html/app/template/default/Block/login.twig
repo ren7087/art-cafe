@@ -13,37 +13,37 @@ file that was distributed with this source code.
     {% if is_granted('ROLE_USER') %}
         <div class="ec-headerNav__item">
             <a href="{{ url('mypage') }}">
-                <i class="ec-headerNav__itemIcon fas fa-user fa-fw"></i>
+				<span class="c-tooltip" data-tooltip="マイページ"><i class="ec-headerNav__itemIcon fas fa-user fa-fw"></i></span>
             </a>
         </div>
         {% if BaseInfo.option_favorite_product %}
             <div class="ec-headerNav__item">
                 <a href="{{ url('mypage_favorite') }}">
-                    <i class="ec-headerNav__itemIcon fas fa-heart fa-fw"></i>
+					<span class="c-tooltip" data-tooltip="お気に入り"><i class="ec-headerNav__itemIcon fas fa-heart fa-fw"></i></span>
                 </a>
             </div>
         {% endif %}
         <div class="ec-headerNav__item">
             <a href="{{ url('logout') }}">
-                <i class="ec-headerNav__itemIcon fas fa-lock fa-fw"></i>
+				<span class="c-tooltip" data-tooltip="ログアウト"><i class="ec-headerNav__itemIcon fas fa-right-from-bracket fa-fw"></i></span>
             </a>
         </div>
     {% else %}
         <div class="ec-headerNav__item">
             <a href="{{ url('entry') }}">
-                <i class="ec-headerNav__itemIcon fas fa-user fa-fw"></i>
+				<span class="c-tooltip" data-tooltip="新規会員登録"><i class="ec-headerNav__itemIcon fas fa-user fa-fw"></i></span>
             </a>
         </div>
         {% if BaseInfo.option_favorite_product %}
             <div class="ec-headerNav__item">
                 <a href="{{ url('mypage_favorite') }}">
-                    <i class="ec-headerNav__itemIcon fas fa-heart fa-fw"></i>
+					<span class="c-tooltip" data-tooltip="お気に入り"><i class="ec-headerNav__itemIcon fas fa-heart fa-fw"></i></span>
                 </a>
             </div>
         {% endif %}
         <div class="ec-headerNav__item">
             <a href="{{ url('mypage_login') }}">
-                <i class="ec-headerNav__itemIcon fas fa-lock fa-fw"></i>
+                <span class="c-tooltip" data-tooltip="ログイン"><i class="ec-headerNav__itemIcon fas fa-lock fa-fw"></i></span>
             </a>
         </div>
     {% endif %}

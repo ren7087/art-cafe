@@ -107,7 +107,7 @@ class ProductController extends AbstractController
 	/**
      * カテゴリー詳細画面.
      *
-     * @Route("/products/feature/{id}", name="product_feature", methods={"GET"}, requirements={"id" = "\d+"})
+     * @Route("/products/feature/{id}", name="product_feature", methods={"GET"})
      * @Template("Product/feature.twig")
      * @ParamConverter("Product", options={"repository_method" = "findWithSortedClassCategories"})
      *

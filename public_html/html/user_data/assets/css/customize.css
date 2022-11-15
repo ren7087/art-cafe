@@ -459,6 +459,20 @@
   display: flex;
 }
 
+.ec-productRole {
+  margin-top: 50px;
+  /* margin: 0 auto; */
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #525263;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  max-width: 1130px;
+}
+
 .ec-productRole .ec-productRole__price {
   color: #d5a770;
   font-size: 28px;
@@ -652,7 +666,7 @@ a.btn--orange:hover {
   color: #d5a770;
 }
 
-会員登録 Entry/indexのcss
+/* 会員登録 Entry/indexのcss */
 /* .ec-pageHeader .a {
   margin: 0 0 8px;
   border-bottom: 1px dotted #ccc;
